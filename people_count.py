@@ -7,17 +7,6 @@ line = 300
 
 cap = cv2.VideoCapture('peopleCount.mp4') #Open video file
 
-#Create the background substractor
-#fgbg = cv2.BackgroundSubtractorMOG()
-
-#Create the background substractor
-#******Creates a GMG Background Subtractor.
-#fgbg = cv2.bgsegm.createBackgroundSubtractorGMG()
-
-#******Creates a CNT Background Subtractor.
-#fgbg = cv2.bgsegm.createBackgroundSubtractorCNT()
-
-#******Creates mixture-of-gaussian background subtractor.
 fgbg = cv2.bgsegm.createBackgroundSubtractorMOG()
 
 
@@ -95,7 +84,6 @@ while(cap.isOpened()):
         cv2.putText(frame, "out: " + str(peopleout) ,(10,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)
         cv2.putText(frame, "in: " + str(peoplein) ,(10,100),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),2)
         cv2.imshow('Frame',frame)
-        #cv2.imshow('Background Substraction',fgmask)
 
 
         #Abort and exit with 'Q' or ESC
@@ -103,5 +91,5 @@ while(cap.isOpened()):
         if k == 27:
             break
 
-cap.release() #release video file
-cv2.destroyAllWindows() #close all openCV windows
+cap.release()
+cv2.destroyAllWindows(
